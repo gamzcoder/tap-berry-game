@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            box-sizing: border-box;
+            justify-content: center;
+            position: relative;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            height: 100px;
+            width: 50px;
+            border: 5px solid black;
+            margin: 2px 10px 10px 2px;
+            transform: rotate(0deg);
+            transition: transform 1s linear;
+        }
+
+        .box.open {
+            transform: rotate(180deg);
+            transition: transform 1s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="column1">
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+        </div>
+        <div class="column2">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <div class="column3">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+        <script>
+            (function () {
+                var div = document.getElementById('container');
+                var icon = document.getElementsByClassName('box');
+                var open = false;
+                console.log(icon)
+                Array.from(icon).forEach(element => { //by default getElementsbyclass gives an arry but that is not apply for function on forEach thats way we use 'from' to get elements from html elements
+                    element.addEventListener('click', function () {
+    
+                            if (open) {
+                                element.className = 'box';
+                            } else {
+                                element.className = 'box open';
+                            }
+    
+                            open = !open;
+                        });
+                });
+                
+            
+            })()
+
+        </script>
+
+
+    </div>
+
+</body>
+
+</html>

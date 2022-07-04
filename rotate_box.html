@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fa-arrow-down {
+            border: 5px solid red;
+            height: 100px;
+            width: 500px;
+            transform: rotate(0deg);
+            transition: transform 1s linear;
+        }
+
+        .fa-arrow-down.open {
+            transform: rotate(180deg);
+            transition: transform 1s linear;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <i id="icon" class="fa fa-arrow-down"></i>
+    </div>
+    <script>
+        (function (document) {
+            var div = document.getElementById('container');
+            var icon = document.getElementById('icon');
+            var open = false;
+
+            div.addEventListener('click', function () {
+                if (open) {
+                    icon.className = 'fa fa-arrow-down';
+                } else {
+                    icon.className = 'fa fa-arrow-down open';
+                }
+
+                open = !open;
+            });
+        })(document);
+    </script>
+
+</body>
+
+</html>
