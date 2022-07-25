@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="images"></div>
+    <script>
+
+        // div.innerText=image_array[1];
+
+        (function choose() {
+            var div = document.getElementById('images');
+            var image_array = ['&#9632;', '&#9645;', '&#9646;',]
+            var randomNum = Math.floor(Math.random() * image_array.length);
+            console.log(image_array[randomNum])
+            div.innerHTML = image_array[randomNum];
+        })()
+    </script>
+</body>
+</htm
